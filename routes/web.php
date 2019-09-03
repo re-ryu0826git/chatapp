@@ -12,3 +12,4 @@
 */
 
 Route::get('/','GroupController@index');
+Route::get('/Comment','CommentController@show');
