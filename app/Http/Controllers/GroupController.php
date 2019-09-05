@@ -11,4 +11,15 @@ class GroupController extends Controller
     {
       return view('group.index');
     }
+    
+    public function add()
+    {
+      return view('group.create');
+    }
+    
+    public function create()
+    {
+      return redirect('group.create');
+    }
+    
 }

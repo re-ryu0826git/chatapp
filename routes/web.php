@@ -12,4 +12,6 @@
 */
 
 Route::get('/','GroupController@index');
-Route::get('/Comment','CommentController@show');
+Route::get('group/create', 'GroupController@add');
+Route::post('group/create', 'GroupController@create');
+Route::get('comment/','CommentController@show');
