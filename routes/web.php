@@ -11,7 +11,10 @@
 |
 */
 
-Route::get('/','GroupController@index');
-Route::get('group/create', 'GroupController@add');
-Route::post('group/create', 'GroupController@create');
-Route::get('comment/','CommentController@show');
+Route::get('/','GroupController@index')->middleware('auth');
+Route::get('group/create', 'GroupController@add')->middleware('auth');
+Route::post('group/create', 'GroupController@create')->middleware('auth');
+Route::get('comment/','CommentController@show')->middleware('auth');
+
+Auth::routes();
+// Route::get('/home', 'HomeController@index')->name('home');
