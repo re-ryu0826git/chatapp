@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+// Group Modelを扱えるようになる
+use App\Group;
 
 class GroupController extends Controller
 {
@@ -17,9 +19,21 @@ class GroupController extends Controller
       return view('group.create');
     }
     
-    public function create()
+    public function create(Request $request)
     {
-      return redirect('group.create');
+      //Varidation
+      $this->validate($request, Group::$rules);
+      
+      $group = new Group;
+      $form = $request->all();
+      
+      unset($form['_token']);
+      
+      //データベースへ保存
+      $group->fill($form);
+      $group->save();
+      
+      return redirect('group/create');
     }
     
 }
