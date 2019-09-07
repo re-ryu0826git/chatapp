@@ -20,51 +20,23 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>動物</td>
-                  <td>
-                    <div>
-                      <a href="#">チャット画面へ</a>
-                    </div>
-                  </td>
-                  <td>2019/08/09 12:49</td>
-                  <td>
-                    <div>
-                      <a href="#">Exit</a>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>ドラマ</td>
-                  <td>
-                    <div>
-                      <a href="#">チャット画面へ</a>
-                    </div>
-                  </td>
-                  <td>2019/07/10 16:09</td>
-                  <td>
-                    <div>
-                      <a href="#">Exit</a>
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>スポーツ</td>
-                  <td>
-                    <div>
-                      <a href="#">チャット画面へ</a>
-                    </div>
-                  </td>
-                  <td>2019/06/09 7:09</td>
-                  <td>
-                    <div>
-                      <a href="#">Exit</a>
-                    </div>
-                  </td>
-                </tr>
+                @foreach($posts as $group)
+                  <tr>
+                    <th scope="row">{{ $group->id }}</th>
+                    <td>{{ $group->name }}</td>
+                    <td>
+                      <div>
+                        <a href="#">チャット画面へ</a>
+                      </div>
+                    </td>
+                    <td>2019/08/09 12:49</td>
+                    <td>
+                      <div>
+                        <a href="#">Exit</a>
+                      </div>
+                    </td>
+                  </tr>
+                @endforeach
               </tbody>
             </table>
         </div>

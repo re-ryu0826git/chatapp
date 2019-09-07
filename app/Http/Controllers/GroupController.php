@@ -11,7 +11,8 @@ class GroupController extends Controller
     //
     public function index()
     {
-      return view('group.index');
+      $posts = Group::all();
+      return view('group.index',['posts' => $posts]);
     }
     
     public function add()
